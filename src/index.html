@@ -1,104 +1,832 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="output.css " />
+		<!-- <link rel="stylesheet" href="./js/main.js" /> -->
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href=output.css ">
-  </head>
+	<body class="bg-gray-50">
+		<header class="bg-[#061a85] text-white w-full">
+			<nav
+				class="flex justify-between lg:justify-evenly px-4 py-3.5 w-full text-white"
+			>
+				<div class="flex">
+					<svg
+						xmlns="http://www.w3.org/2000/svg "
+						fill="none "
+						viewBox="0 0 24 24 "
+						stroke-width="1.5 "
+						stroke="currentColor "
+						class="size-6 text-white px-1"
+					>
+						<path
+							stroke-linecap="round "
+							stroke-linejoin="round "
+							d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0
+        .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z "
+						/>
+					</svg>
 
-  <body class="bg-gray-50 ">
-    <header>
-      
-    <nav class="flex justify-evenly px-4 py-3.5 rounded-sm bg-amber-50 w-full ">
-        <div class="flex ">
-            <span>
-              <img
-                src="img/checkroom_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg "
-                alt=" "
-            /></span>
-            <h6 class="font-semibold text-gray-600 ">Clothes Shop</h6>
-        </div>
-        <ul class="flex gap-5 font-semibold text-gray-600 ">
-            <li><a href="# ">New Arrivels</a></li>
-            <li><a href="# ">Men</a></li>
-            <li><a href="# ">Women</a></li>
-            <li><a href="# ">Kids</a></li>
-            <li><a href="# ">Accessories</a></li>
-            <li><a href="# ">Sale</a></li>
-        </ul hover>
-        <div class="flex relative "> <span class="left-8 ">
-              <img class="absolute left-40 "
-                src="img/search_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg "
-                alt=" "
-            /></span>
-            <input class=" px-1 rounded-md border-b-gray-600 outline-1 outline-gray-300 hover:outline-gray-400 " type="search " name=" search " id=" search " placeholder="Search... " /></div>
-    </nav>
-    </header>
-<main>
+					<a href="# " class="font-semibold c">Clothes Shop</a>
+				</div>
 
-    <!-- Hero Section -->
-    <section class="flex justify-center mt-7 " >
-        <div class="bg-[url(img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg)] w-[800px] bg-cover h-[400px] flex justify-center items-center bg-center rounded-md ">
-            
-           <div> 
-            <h6 class="pb-2 font-bold text-white text-6xl ">Elevate Your Style</h6>
-            <p class="text-white font-bold ">Discover the latest trends and classic in our curated collection </p>
-        </div>
-        </div>
-    </section>
-<div class="flex justify-center p-2 "><h1 class="font-semibold text-gray-600 text-2xl ">Feature Products</h1></div>
-<!--Product Section  -->
-<section class="flex flex-col justify-center ">
-    <!-- Cards -->
-     
-    <div class="flex justify-center gap-4 flex-row ">    
-        <!-- card -->
+				<!-- Menu Toggle Button -->
+				<button id="menu-btn" class="lg:hidden text-white focus:outline-none">
+					<svg
+						xmlns="http://www.w3.org/2000/svg "
+						fill="none "
+						viewBox="0 0 24 24 "
+						stroke-width="1.5 "
+						stroke="currentColor "
+						class="size-6"
+					>
+						<path
+							stroke-linecap="round "
+							stroke-linejoin="round "
+							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5 "
+						/>
+					</svg>
+				</button>
 
-    <div class="bg-gray-100 rounded-md shadow-gray-300 shadow p-1.5 flex flex-col ">
-        <img src="img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg " alt="product " class="w-40 h-36 p-0.5 rounded-lg ">
-        <div class="flex flex-col items-center gap-y-1.5 ">
-            <h1>Casual cotton Shirt</h1>
-            <span class="text-gray-500 ">$50</span>
-              <button class="w-full bg-emerald-600 rounded-md px-6 text-white ">Details</button>
+				<ul
+					id="menu"
+					class="hidden lg:flex flex-col lg:flex-row gap-4 font-semibold text-white absolute lg:static bg-amber-50 w-full left-0 top-full lg:w-auto lg:bg-transparent p-4 lg:p-0"
+				>
+					<li><a href="# ">New Arrivels</a></li>
+					<li><a href="# ">Men</a></li>
+					<li><a href="# ">Women</a></li>
+					<li><a href="# ">Kids</a></li>
+					<li><a href="# ">Accessories</a></li>
+					<li><a href="# ">Sale</a></li>
+				</ul>
+				<!-- Search -->
+				<div class="hidden lg:flex relative items-center">
+					<input
+						class="px-2 py-1 rounded-md border border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
+						type="search"
+						placeholder="Search..."
+					/>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="w-5 h-5 absolute right-2 text-gray-500"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m21 21-5.197-5.197m0 0A7.5 7.5 0 
+              1 0 5.196 5.196a7.5 7.5 0 0 0 
+              10.607 10.607Z"
+						/>
+					</svg>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<!-- Hero Section -->
+			<section class="flex justify-center">
+				<div
+					class="bg-[url(img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg)] w-full bg-cover h-[400px] flex justify-center items-center bg-center rounded-md"
+				>
+					<div>
+						<h6 class="pb-2 font-bold text-white text-6xl">
+							Elevate Your Style
+						</h6>
+						<p class="text-white font-bold">
+							Discover the latest trends and classic in our curated collection
+						</p>
+					</div>
+				</div>
+			</section>
 
-        </div>
-    </div>
+			<!--Product Section  -->
 
-  <div class="bg-gray-100 rounded-md shadow-gray-300 shadow p-1.5 flex flex-col ">
-        <img src="img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg " alt="product " class="w-40 h-36 p-0.5 rounded-lg ">
-        <div class="flex flex-col items-center gap-y-1.5 ">
-            <h1>Casual cotton Shirt</h1>
-            <span class="text-gray-500 ">$50</span>
-              <button class="w-full bg-emerald-600 rounded-md px-6 text-white ">Details</button>
+			<!--  Slider Section -->
+			<section class="bg-gray-100 py-6 px-4">
+				<div class="flex justify-between items-center my-4">
+					<h2 class="text-2xl font-bold text-[#061a85]">New Arrivals</h2>
+					<div class="space-x-2">
+						<button
+							id="prevBtn"
+							class="bg-[#061a85] text-white px-4 py-1 rounded hover:bg-blue-900"
+						>
+							←
+						</button>
+						<button
+							id="nextBtn"
+							class="bg-[#061a85] text-white px-4 py-1 rounded hover:bg-blue-900"
+						>
+							→
+						</button>
+					</div>
+				</div>
 
-        </div>
-    </div>
+				<!-- Slider Container -->
+				<div
+					id="slider"
+					class="flex gap-4 overflow-x-auto scroll-smooth w-full no-scrollbar"
+				>
+					<!-- Product Card -->
+					<div
+						class="min-w-[250px] max-w-[250px] bg-white shadow-md rounded-lg p-3 flex-shrink-0"
+					>
+						<a
+							class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+							href="# "
+						>
+							<img
+								class="object-cover"
+								src="img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg"
+								alt="product image "
+							/>
+							<span
+								class="absolute top-0 left-0 m-2 rounded-full bg-[#061a85] px-2 text-center text-sm font-medium text-white"
+								>39% OFF</span
+							>
+						</a>
+						<div class="mt-4 px-5 pb-5">
+							<a href="# ">
+								<h5 class="text-xl tracking-tight text-[#061a85]">
+									Casual cotton Shirt
+								</h5>
+							</a>
+							<div class="mt-2 mb-5 flex items-center justify-between">
+								<p>
+									<span class="text-3xl font-bold text-[#061a85]">$449</span>
+									<span class="text-sm text-[#061a85] line-through">$699</span>
+								</p>
+								<div class="flex items-center">
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true"
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<span
+										class="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs text-[#061a85] font-semibold"
+										>5.0</span
+									>
+								</div>
+							</div>
+							<a
+								href="# "
+								class="flex items-center justify-center rounded-md bg-[#061a85] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg "
+									class="mr-2 h-6 w-6"
+									fill="none "
+									viewBox="0 0 24 24 "
+									stroke="currentColor "
+									stroke-width="2 "
+								>
+									<path
+										stroke-linecap="round "
+										stroke-linejoin="round "
+										d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z "
+									/>
+								</svg>
+								Add to cart</a
+							>
+						</div>
+					</div>
 
+					<!-- Product Card -->
+					<div
+						class="min-w-[250px] max-w-[250px] bg-white shadow-md rounded-lg p-3 flex-shrink-0"
+					>
+						<a
+							class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+							href="# "
+						>
+							<img
+								class="object-cover"
+								src="img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg"
+								alt="product image "
+							/>
+							<span
+								class="absolute top-0 left-0 m-2 rounded-full bg-[#061a85] px-2 text-center text-sm font-medium text-white"
+								>39% OFF</span
+							>
+						</a>
+						<div class="mt-4 px-5 pb-5">
+							<a href="# ">
+								<h5 class="text-xl tracking-tight text-[#061a85]">
+									Casual cotton Shirt
+								</h5>
+							</a>
+							<div class="mt-2 mb-5 flex items-center justify-between">
+								<p>
+									<span class="text-3xl font-bold text-[#061a85]">$449</span>
+									<span class="text-sm text-[#061a85] line-through">$699</span>
+								</p>
+								<div class="flex items-center">
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true"
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<span
+										class="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs text-[#061a85] font-semibold"
+										>5.0</span
+									>
+								</div>
+							</div>
+							<a
+								href="# "
+								class="flex items-center justify-center rounded-md bg-[#061a85] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg "
+									class="mr-2 h-6 w-6"
+									fill="none "
+									viewBox="0 0 24 24 "
+									stroke="currentColor "
+									stroke-width="2 "
+								>
+									<path
+										stroke-linecap="round "
+										stroke-linejoin="round "
+										d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z "
+									/>
+								</svg>
+								Add to cart</a
+							>
+						</div>
+					</div>
+					<!-- Product Card -->
+					<div
+						class="min-w-[250px] max-w-[250px] bg-white shadow-md rounded-lg p-3 flex-shrink-0"
+					>
+						<a
+							class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+							href="# "
+						>
+							<img
+								class="object-cover"
+								src="img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg"
+								alt="product image "
+							/>
+							<span
+								class="absolute top-0 left-0 m-2 rounded-full bg-[#061a85] px-2 text-center text-sm font-medium text-white"
+								>39% OFF</span
+							>
+						</a>
+						<div class="mt-4 px-5 pb-5">
+							<a href="# ">
+								<h5 class="text-xl tracking-tight text-[#061a85]">
+									Casual cotton Shirt
+								</h5>
+							</a>
+							<div class="mt-2 mb-5 flex items-center justify-between">
+								<p>
+									<span class="text-3xl font-bold text-[#061a85]">$449</span>
+									<span class="text-sm text-[#061a85] line-through">$699</span>
+								</p>
+								<div class="flex items-center">
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true"
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<span
+										class="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs text-[#061a85] font-semibold"
+										>5.0</span
+									>
+								</div>
+							</div>
+							<a
+								href="# "
+								class="flex items-center justify-center rounded-md bg-[#061a85] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg "
+									class="mr-2 h-6 w-6"
+									fill="none "
+									viewBox="0 0 24 24 "
+									stroke="currentColor "
+									stroke-width="2 "
+								>
+									<path
+										stroke-linecap="round "
+										stroke-linejoin="round "
+										d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z "
+									/>
+								</svg>
+								Add to cart</a
+							>
+						</div>
+					</div>
+					<!-- Product Card -->
+					<div
+						class="min-w-[250px] max-w-[250px] bg-white shadow-md rounded-lg p-3 flex-shrink-0"
+					>
+						<a
+							class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+							href="# "
+						>
+							<img
+								class="object-cover"
+								src="img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg"
+								alt="product image "
+							/>
+							<span
+								class="absolute top-0 left-0 m-2 rounded-full bg-[#061a85] px-2 text-center text-sm font-medium text-white"
+								>39% OFF</span
+							>
+						</a>
+						<div class="mt-4 px-5 pb-5">
+							<a href="# ">
+								<h5 class="text-xl tracking-tight text-[#061a85]">
+									Casual cotton Shirt
+								</h5>
+							</a>
+							<div class="mt-2 mb-5 flex items-center justify-between">
+								<p>
+									<span class="text-3xl font-bold text-[#061a85]">$449</span>
+									<span class="text-sm text-[#061a85] line-through">$699</span>
+								</p>
+								<div class="flex items-center">
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true"
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<span
+										class="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs text-[#061a85] font-semibold"
+										>5.0</span
+									>
+								</div>
+							</div>
+							<a
+								href="# "
+								class="flex items-center justify-center rounded-md bg-[#061a85] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg "
+									class="mr-2 h-6 w-6"
+									fill="none "
+									viewBox="0 0 24 24 "
+									stroke="currentColor "
+									stroke-width="2 "
+								>
+									<path
+										stroke-linecap="round "
+										stroke-linejoin="round "
+										d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z "
+									/>
+								</svg>
+								Add to cart</a
+							>
+						</div>
+					</div>
+					<!-- last card -->
+					<!-- Product Card -->
+					<div
+						class="min-w-[250px] max-w-[250px] bg-white shadow-md rounded-lg p-3 flex-shrink-0"
+					>
+						<a
+							class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl"
+							href="# "
+						>
+							<img
+								class="object-cover"
+								src="img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg"
+								alt="product image "
+							/>
+							<span
+								class="absolute top-0 left-0 m-2 rounded-full bg-[#061a85] px-2 text-center text-sm font-medium text-white"
+								>39% OFF</span
+							>
+						</a>
+						<div class="mt-4 px-5 pb-5">
+							<a href="# ">
+								<h5 class="text-xl tracking-tight text-[#061a85]">
+									Casual cotton Shirt
+								</h5>
+							</a>
+							<div class="mt-2 mb-5 flex items-center justify-between">
+								<p>
+									<span class="text-3xl font-bold text-[#061a85]">$449</span>
+									<span class="text-sm text-[#061a85] line-through">$699</span>
+								</p>
+								<div class="flex items-center">
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true "
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<svg
+										aria-hidden="true"
+										class="h-5 w-5 text-yellow-300"
+										fill="currentColor "
+										viewBox="0 0 20 20 "
+										xmlns="http://www.w3.org/2000/svg "
+									>
+										<path
+											d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1
+        1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z "
+										></path>
+									</svg>
+									<span
+										class="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs text-[#061a85] font-semibold"
+										>5.0</span
+									>
+								</div>
+							</div>
+							<a
+								href="# "
+								class="flex items-center justify-center rounded-md bg-[#061a85] px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
+							>
+								<svg
+									xmlns="http://www.w3.org/2000/svg "
+									class="mr-2 h-6 w-6"
+									fill="none "
+									viewBox="0 0 24 24 "
+									stroke="currentColor "
+									stroke-width="2 "
+								>
+									<path
+										stroke-linecap="round "
+										stroke-linejoin="round "
+										d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z "
+									/>
+								</svg>
+								Add to cart</a
+							>
+						</div>
+					</div>
+					<!-- last card end -->
+				</div>
+			</section>
+		</main>
+		<footer class="px-3 pt-4 lg:px-9 border-t-2 border-[#061a85] bg-gray-50">
+			<div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
+				<div class="sm:col-span-2">
+					<a href="#" class="inline-flex items-center">
+						<svg
+							xmlns="http://www.w3.org/2000/svg "
+							fill="none "
+							viewBox="0 0 24 24 "
+							stroke-width="1.5 "
+							stroke="currentColor "
+							class="size-6 text-[#061a85] px-1"
+						>
+							<path
+								stroke-linecap="round "
+								stroke-linejoin="round "
+								d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0
+        .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z "
+							/>
+						</svg>
+						<span class="ml-2 text-xl font-bold tracking-wide text-[#061a85]"
+							>Clothes Shop</span
+						>
+					</a>
+					<div class="mt-6 lg:max-w-xl">
+						<p class="text-sm text-gray-800">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+							felis mi, faucibus dignissim lorem id, imperdiet interdum mauris.
+						</p>
+					</div>
+				</div>
 
+				<div class="flex flex-col gap-2 text-sm">
+					<p class="text-base font-bold tracking-wide text-[#061a85]">
+						Popular trends
+					</p>
+					<a href="#">custom clothes</a>
+					<a href="#">Book now</a>
+					<a href="#">Shop now</a>
+				</div>
 
-  <div class="bg-gray-100 rounded-md shadow-gray-300 shadow p-1.5 flex flex-col ">
-        <img src="img/53dc4c1d-a7b2-4112-a883-13660f09b4ce.jpg " alt="product " class="w-40 h-36 p-0.5 rounded-lg ">
-        <div class="flex flex-col items-center gap-y-1.5 ">
-            <h1>Casual cotton Shirt</h1>
-            <span class="text-gray-500 ">$50</span>
-              <button class="w-full bg-emerald-600 rounded-md px-6 text-white ">Details</button>
+				<div>
+					<p class="text-base font-bold tracking-wide text-[#061a85]">
+						Shop IS ALSO AVAILABLE ON
+					</p>
 
-        </div>
-    </div>
+					<p class="text-base font-bold tracking-wide text-[#061a85] mb-5">
+						Contacts
+					</p>
+					<div class="flex">
+						<p class="mr-1 text-gray-800">Email:</p>
+						<a href="#" title="send email">osama@clothesshop.com</a>
+					</div>
+				</div>
+			</div>
 
+			<div
+				class="flex flex-col-reverse justify-between pt-5 pb-10 border-t border-[#061a85] lg:flex-row"
+			>
+				<p class="text-sm text-gray-600">
+					© Copyright 2025 Clothes Shop. All rights reserved.
+				</p>
+				<ul
+					class="flex flex-col mb-3 space-y-2 lg:mb-0 sm:space-y-0 sm:space-x-5 sm:flex-row"
+				>
+					<li>
+						<a
+							href="#"
+							class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+							>Privacy &amp; Cookies Policy
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-sm text-gray-600 transition-colors duration-300 hover:text-deep-purple-accent-400"
+							>Disclaimer
+						</a>
+					</li>
+				</ul>
+			</div>
+		</footer>
+		<script>
+			const menuBtn = document.getElementById("menu-btn");
+			const menu = document.getElementById("menu");
 
+			menuBtn.addEventListener("click", () => {
+				menu.classList.toggle("hidden");
+			});
+			const slider = document.getElementById("slider");
+			const nextBtn = document.getElementById("nextBtn");
+			const prevBtn = document.getElementById("prevBtn");
 
-    </div>
+			nextBtn.addEventListener("click", () => {
+				slider.scrollLeft += 220;
+			});
 
-</section>
-
-</main>
-
-    <script>
-        console.log("Hello, World! ");
-    </script>
-    </body>
-
+			prevBtn.addEventListener("click", () => {
+				slider.scrollLeft -= 220;
+			});
+		</script>
+	</body>
 </html>
